@@ -8,5 +8,5 @@ import (
 func RegisterHealthCheckRoutes(e *echo.Echo) {
 	v1 := e.Group("/v1")
 
-	v1.GET("/alive", handlers.IsAlive)
+	v1.GET("/healthcheck", handlers.IsAlive)
 }

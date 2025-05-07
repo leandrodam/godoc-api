@@ -13,7 +13,4 @@ FROM gcr.io/distroless/static-debian12:nonroot-amd64
 WORKDIR /app
 COPY --from=builder /app/bin/godoc-api ./godoc-api
 COPY ./.env ./.env
-EXPOSE 8080
-HEALTHCHECK --interval=1m --timeout=5s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8080/v1/alive || exit 1
 ENTRYPOINT ["./godoc-api"]
