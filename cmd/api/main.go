@@ -15,9 +15,9 @@ func main() {
 
 	routes.RegisterRoutes(e)
 
-	log.Printf("starting server on port %s", cfg.Port)
+	log.Printf("starting server on port %s", cfg.App.Port)
 
-	if err := e.Start(":" + cfg.Port); err != nil {
+	if err := e.Start(":" + cfg.App.Port); err != nil {
 		log.Fatalf("failed to start server: %v", err)
 	}
 }
