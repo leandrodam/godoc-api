@@ -17,7 +17,7 @@ func main() {
 
 	log.Printf("starting server on port %s", cfg.Port)
 
-	if err := e.Start(cfg.Port); err != nil {
+	if err := e.Start(":" + cfg.Port); err != nil {
 		log.Fatalf("failed to start server: %v", err)
 	}
 }
